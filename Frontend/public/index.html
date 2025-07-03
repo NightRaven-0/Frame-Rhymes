@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PoetLens - Generate a Poem from Your Image</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 2rem 3rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1.5rem;
+    }
+
+    input[type="file"],
+    input[type="text"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      font-size: 1rem;
+    }
+
+    input[type="submit"] {
+      background-color: #1abc9c;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #16a085;
+    }
+
+    .output {
+      margin-top: 2rem;
+      display: none;
+    }
+
+    .output h3 {
+      margin: 0.5rem 0;
+    }
+
+    #uploadedImage {
+      display: block;
+      margin: 1rem auto;
+      max-width: 100%;
+      border-radius: 0.5rem;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      resize: none;
+    }
+
+    #downloadBtn {
+      margin-top: 1rem;
+      background: #f39c12;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #downloadBtn:hover {
+      background: #d68910;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🖼️ PoetLens</h1>
+    <form id="uploadForm">
+      <input type="file" name="image" id="imageInput" required />
+      <input type="text" name="mood" id="moodInput" placeholder="Enter mood (e.g., calm, happy, eerie)" />
+      <input type="submit" value="Generate Poem" />
+    </form>
+
+    <div class="output" id="output">
+      <h3>📸 Caption:</h3>
+      <span id="caption"></span>
+
+      <h3>💬 Mood:</h3>
+      <span id="moodDisplay"></span>
+
+      <h3>📷 Your Image:</h3>
+      <img id="uploadedImage" alt="Uploaded Image Preview" />
+
+      <h3>📜 Poem:</h3>
+      <textarea id="poemArea" rows="10" readonly></textarea>
+      <button id="downloadBtn">Download Poem</button>
+    </div>
+  </div>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+flask
+flask-cors
+python-dotenv
+torch
+transformers
+pillow
+torchvision #some models need it ig
+google-generativeai
