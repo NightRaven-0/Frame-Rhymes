@@ -10,7 +10,7 @@ CORS(app)
 @app.route('/', methods=['GET'])
 def index():
     return '''
-        <h1>Poet Lens API</h1>
+        <h1>Frame Rhymes API</h1>
         <p>Use the <code>/upload</code> endpoint to POST an image and mood.</p>
         <form action="/upload" method="post" enctype="multipart/form-data">
             <input type="file" name="image" required><br><br>
